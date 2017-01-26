@@ -3,41 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bencode/types/BStringComparator.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/MainWindow.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/PiecesPanel.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bencode/types/BString.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bencode/BReader.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/icons/plus.png</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/PeerRequest.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/icons/minus.png</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/Torrent.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/Handshake.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/HTTPResponse.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/TrackerUDP__.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/ShareService.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/TorrentItem.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/UDPRequest.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/test/bittorrent/TrackerUDPTest.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/RequestedBlock.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bencode/types/BNumber.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/UDPResponse.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/TrackerBase.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/icons/info.png</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bencode/types/BList.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bencode/types/BMap.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/Peer.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/Client.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/icons/play.png</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/icons/hdd.png</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/TrackerUDP.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/BitfieldTest.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/PeerResponse.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/ClientIdentifier.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/icons/hex_block.png</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/Piece.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bittorrent/TrackerHTTP.java</file>
-            <file>file:/C:/Users/Radek/Desktop/bencoder.git/BitTorrent/src/bencode/BElement.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/PeerResponse.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/MainWindow.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/Torrent.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/Peer.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/Piece.java</file>
         </group>
     </open-files>
 </project-private>

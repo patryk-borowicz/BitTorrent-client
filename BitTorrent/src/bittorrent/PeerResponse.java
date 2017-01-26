@@ -18,7 +18,7 @@ public class PeerResponse {
 
     public enum MessageType {
         KEEP_ALIVE, CHOKE, UNCHOKE, INTERESTED, NOTINTERESTED, HAVE, BITFIELD,
-        PIECE, REQUEST, CANCEL, FAIL, SHORT_LENGTH
+        PIECE, REQUEST, CANCEL, FAIL, SHORT_LENGTH, PORT
     };
 
     public final static int CHOKE_MESSAGE = 0x0;
@@ -29,7 +29,8 @@ public class PeerResponse {
     public final static int BITFIELD_MESSAGE = 0x5;
     public final static int REQUEST_MESSAGE = 0x6;
     public final static int PIECE_MESSAGE = 0x7;
-    public final static int CANCEL_MESSAGE = 0x8;
+    public final static int CANCEL_MESSAGE = 8;
+    public final static int PORT_MESSAGE = 9;
 
     private int len = 0;
     private int index = 0;
@@ -124,6 +125,11 @@ public class PeerResponse {
                     pr.index = readInteger(in);
                     pr.begin = readInteger(in);
                     pr.length = readInteger(in);
+                    break;
+                case PORT_MESSAGE:
+                    System.out.println("port!");
+                    pr.result = MessageType.PORT;
+                    in.skip(2);
                     break;
                 default:
                     System.err.println("response fail");

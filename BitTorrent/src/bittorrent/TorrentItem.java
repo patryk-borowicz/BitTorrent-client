@@ -103,6 +103,6 @@ public class TorrentItem {
         
         String p = (completed * 100 / all) + "%";
         String pp = completed + "/" + all;
-        return new Object[] { name, length, p, pp };
+        return new Object[] { name, Client.bytesFormat(length), p, pp };
     }
 }

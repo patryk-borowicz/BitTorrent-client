@@ -56,7 +56,7 @@ public class Torrent {
     //private Queue<Peer> peers = new LinkedList<Peer>();
     private long torrentComplete = 0;
     final int ALIVE_TIME = 1000 * 120; //2minuty
-    private List<Piece> pieces = new ArrayList<Piece>();
+    private List<Piece> pieces = Collections.synchronizedList(new ArrayList<Piece>());
     private int completedPieces = 0;
     private double downloadSpeed = 0;
     private double remainingTime = 0;
@@ -266,7 +266,7 @@ public class Torrent {
                 workingPeers = Collections.synchronizedSet(new HashSet<>());
                 //newPeers.add(new Peer("localhost", 6881));
                 long time = System.currentTimeMillis();
-                int maxPeers = 10;
+                int maxPeers = 40;
                 while (true) {
                     if (!isWorking) {
                         System.out.println("Torrent service stop!");
@@ -290,6 +290,7 @@ public class Torrent {
                                 System.out.println("PIECE upload" + block.getIndex());
                                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                                 baos.write(piece.getData(), block.getBegin(), block.getLength());
+                                uploadTotal += baos.size();
                                 p.piece(block.getIndex(), block.getBegin(), baos);
                             }
                         }
@@ -371,7 +372,11 @@ public class Torrent {
             0, 0, getSHA1(), completedPieces + "/" + piecesCount};
 
     }
-
+    private long uploadTotal = 0;
+    public long getUploadTotal()
+    {
+        return uploadTotal;
+    }
     public void addPiecesFromBitfield(byte[] bitfield, Peer p) {
         int offset = 0;
         for (byte b : bitfield) {
@@ -545,5 +550,7 @@ public class Torrent {
             
         }
     }
+    
+    
 
 }

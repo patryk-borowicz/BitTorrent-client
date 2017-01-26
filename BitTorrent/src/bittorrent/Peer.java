@@ -38,7 +38,7 @@ public class Peer {
     private Status status = Status.NOT_STARTED;
     private boolean authenticated = false;
     private boolean handshakeSended = false;
-    private final int BUFFER_LIMIT = 20000;
+    private final int BUFFER_LIMIT = 32768;
     private ByteBuffer buffer;
     private final int ALIVE_TIME = 1000 * 120;
     private boolean isChocked = false;
@@ -199,7 +199,8 @@ public class Peer {
             }
 
             if (System.currentTimeMillis() - time > 20000 && actualPieceWait != null) {
-                System.err.println("Timeout: " + ip + " index " + actualPieceWait.getIndex());
+                System.err.println("Timeout: " + ip + " index " + actualPieceWait.getIndex() 
+                + " Blocks: "+blocksData.size() +"/"+blockSizes.size());
                 actualPieceWait.getSeeders().remove(this);
                 actualPieceWait.setRequested(false);
                 actualPieceWait = null;
@@ -219,6 +220,8 @@ public class Peer {
                             isChocked = false;
                             break;
                         case INTERESTED:
+                            client.write(ByteBuffer.wrap(
+                        PeerRequest.create(PeerResponse.MessageType.UNCHOKE)));
                             break;
                         case NOTINTERESTED:
                             break;
@@ -232,7 +235,9 @@ public class Peer {
                             torrent.addPiecesFromBitfield(bitfield, this);
                             break;
                         case PIECE:
+                            time = System.currentTimeMillis();
                             blocksData.put(pr.getBegin(), pr.getBlock());
+                            //System.out.println(" Block: "+blocksData.size() +"/"+blockSizes.size()+" Index: "+actualPieceWait.getIndex());
                             if (blocksData.size() == blockSizes.size()) {
                                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                                 while (blocksData.size() > 0) {
@@ -387,7 +392,12 @@ public class Peer {
     public long getDownloadTotal() {
         return downloadTotal;
     }
-
+    
+    public long getUploadTotal()
+    {
+        return uploadTotal;
+    }
+    private long uploadTotal = 0;
     public boolean isConnected() {
         return Status.CONNECTED == status;
     }
@@ -409,6 +419,7 @@ public class Peer {
         }
         if (status == Status.CONNECTED && authenticated) {
             try {
+                System.out.println("Have: "+ip +" index: "+index);
                 ByteBuffer buff = ByteBuffer.wrap(
                         PeerRequest.create(PeerResponse.MessageType.HAVE, index));
                 client.write(buff);
@@ -453,6 +464,7 @@ public class Peer {
     {
         if (status == Status.CONNECTED && authenticated) {
             try {
+                uploadTotal += data.size();
                 ByteBuffer buff = ByteBuffer.wrap(
                         PeerRequest.create(PeerResponse.MessageType.PIECE, index, begin, data));
                 client.write(buff);
@@ -470,6 +482,10 @@ public class Peer {
     public int getUploadSpeed()
     {
         return 0;
+    }
+
+    public boolean isAuthenticated() {
+        return authenticated;
     }
 
 }

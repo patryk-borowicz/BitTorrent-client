@@ -59,7 +59,7 @@ public class PeerRequest {
                 out.write(toByteArray((int)args[2]));//length
                 break;
             case PIECE:
-                out.write(toByteArray(9 + ((byte[])args[2]).length));
+                out.write(toByteArray(9 + ((ByteArrayOutputStream)args[2]).size()));
                 out.write(PeerResponse.PIECE_MESSAGE);
                 out.write((int)args[0]);//index
                 out.write((int)args[1]);//begin

@@ -71,7 +71,8 @@ public class TrackerUDP {
                                             transaction_id,
                                             t.getInfoHash(),
                                             Client.CLIENT_ID.getBytes(),
-                                            0, 0, t.getTotalSize(),
+                                            t.getCompleteBytes(), 0, 
+                                            t.getTotalSize() - t.getCompleteBytes(),
                                             2, 64, 50, 6881), myAddress);
 
                                     long time2 = System.currentTimeMillis();

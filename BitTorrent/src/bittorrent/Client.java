@@ -63,6 +63,7 @@ public class Client {
                         if (t != null) {
                             table.setValueAt(t.getCompletedCount() * 100 / t.getPiecesCount() + "% " + t.getStatus(), i, 2);
                             table.setValueAt(bytesFormat(t.getCompleteBytes()), i, 3);
+                            table.setValueAt(bytesFormat(t.getUploadTotal()), i, 4);
                             table.setValueAt(t.getCompletedCount() + "/" + t.getPiecesCount(), i, 6);
                             table.setValueAt(timeFormat((long) t.getRemainingTime()), i, 7);
                             table.setValueAt(bpsFormat(t.getDownloadSpeed()), i, 8);
@@ -134,18 +135,19 @@ public class Client {
             trackerModel.removeRow(0);
         }
         //tu dodac czyszczenie zakladki pieces
+        try {
         Torrent t = getTorrentFromSHA1(sha1);
         if (t != null) {
             for (Peer peer : t.getWorkingPeers()) {
-                if (!peer.isConnected()) {
-                    //continue;
+                if (!peer.isConnected() || !peer.isAuthenticated()) {
+                    continue;
                 }
                 int pieces = peer.getPieces();
                 int tmp = (pieces * 100) / t.getPiecesCount();
                 model.addRow(new Object[]{peer.getIP(),
                     peer.getClientName(),
                     bytesFormat(peer.getDownloadTotal()),
-                    bytesFormat(0),
+                    bytesFormat(peer.getUploadTotal()),
                     pieces + "(" + tmp + "%)",
                     peer.getStatus(),
                     bpsFormat(peer.getDownloadSpeed()),
@@ -159,6 +161,10 @@ public class Client {
             panel.setPieces(t.getPieces(), t.getPiecesCount(), width / 14);
             panel.revalidate();
             panel.repaint();
+        }
+        } catch(Exception e)
+        {
+            System.err.println("GUI ;-(");
         }
     }
 
