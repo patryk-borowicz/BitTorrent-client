@@ -3,11 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/PeerResponse.java</file>
             <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/MainWindow.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/TrackerUDP.java</file>
             <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/Torrent.java</file>
-            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/Peer.java</file>
             <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/Piece.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/TrackerHTTP.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/ShareService.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/ClientIdentifier.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/PeerResponse.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/Client.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/Peer.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/RequestedBlock.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/TorrentItem.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/TrackerUDP__.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/BitfieldTest.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bittorrent/PeerRequest.java</file>
+            <file>file:/C:/Users/Radek/Desktop/FILES%20-%20GIT/BitTorrent/src/bencode/types/BString.java</file>
         </group>
     </open-files>
 </project-private>

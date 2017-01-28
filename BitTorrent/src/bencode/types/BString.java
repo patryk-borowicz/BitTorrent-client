@@ -32,7 +32,7 @@ public class BString implements BElement {
     }
 
     /**
-     * @param encoded the string we are decoding
+     * 
      * @param index the index to read from
      */
     public static BString read(final byte[] encoded2, AtomicInteger index) {

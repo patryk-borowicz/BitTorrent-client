@@ -266,7 +266,7 @@ public class Torrent {
                 workingPeers = Collections.synchronizedSet(new HashSet<>());
                 //newPeers.add(new Peer("localhost", 6881));
                 long time = System.currentTimeMillis();
-                int maxPeers = 40;
+                int maxPeers = 15;
                 while (true) {
                     if (!isWorking) {
                         System.out.println("Torrent service stop!");

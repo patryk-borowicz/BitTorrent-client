@@ -65,8 +65,9 @@ public class Client {
                             table.setValueAt(bytesFormat(t.getCompleteBytes()), i, 3);
                             table.setValueAt(bytesFormat(t.getUploadTotal()), i, 4);
                             table.setValueAt(t.getCompletedCount() + "/" + t.getPiecesCount(), i, 6);
-                            table.setValueAt(timeFormat((long) t.getRemainingTime()), i, 7);
-                            table.setValueAt(bpsFormat(t.getDownloadSpeed()), i, 8);
+                            table.setValueAt(t.isCompleted ? "-" : t.isWorking() ? timeFormat((long) t.getRemainingTime()) : "-", i, 7);
+                            table.setValueAt(t.isCompleted ? "-" : t.isWorking() ? bpsFormat(t.getDownloadSpeed()) : "-", i, 8);
+                            table.setValueAt("-", i, 9);
                         }
                     }
                     try {
@@ -150,8 +151,6 @@ public class Client {
                     bytesFormat(peer.getUploadTotal()),
                     pieces + "(" + tmp + "%)",
                     peer.getStatus(),
-                    bpsFormat(peer.getDownloadSpeed()),
-                    bpsFormat(peer.getUploadSpeed()),
                     peer.getPort()});
             }
 

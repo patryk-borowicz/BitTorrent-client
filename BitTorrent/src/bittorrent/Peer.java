@@ -399,7 +399,7 @@ public class Peer {
     }
     private long uploadTotal = 0;
     public boolean isConnected() {
-        return Status.CONNECTED == status;
+        return Status.CONNECTED == status && isAuthenticated();
     }
 
     public int getPort() {
@@ -419,7 +419,7 @@ public class Peer {
         }
         if (status == Status.CONNECTED && authenticated) {
             try {
-                System.out.println("Have: "+ip +" index: "+index);
+                //System.out.println("Have: "+ip +" index: "+index);
                 ByteBuffer buff = ByteBuffer.wrap(
                         PeerRequest.create(PeerResponse.MessageType.HAVE, index));
                 client.write(buff);

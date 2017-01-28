@@ -199,11 +199,11 @@ public class MainWindow extends javax.swing.JFrame {
 
             },
             new String [] {
-                "IP", "Client", "Download", "Upload", "Pieces", "Status", "Download Speed", "Upload Speed", "Port"
+                "IP", "Client", "Download", "Upload", "Pieces", "Status", "Port"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

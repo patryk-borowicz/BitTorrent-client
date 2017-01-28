@@ -68,16 +68,6 @@ public class Piece implements Comparable{
         return false;
     }
     
-    /*public boolean checkData(SortedMap<Integer, byte[]> blocksData) throws IOException
-    {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                                while (blocksData.size() > 0) {
-                                    int key = blocksData.firstKey();
-                                    baos.write(blocksData.remove(key));
-                                }
-        return checkData(baos.toByteArray());
-    }*/
-    
     @Override
     public boolean equals(Object o)
     {
